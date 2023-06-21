@@ -9,7 +9,6 @@ publishing {
         mavenJava(MavenPublication) {
             groupId = GROUP_ID
             version = VERSION_NAME
-//            from components.java
         }
     }
     repositories {
