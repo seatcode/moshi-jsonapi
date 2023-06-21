@@ -1,16 +1,3 @@
-# Publish
-
-- Update the version (version.kt)
-- Then run the following commands:
-
-```
-./gradlew clean assemble
-./gradlew core:publish
-./gradlew retrofit-converter:publish
-```
-
----
-
 # Change log
 
 ## Version 3.5.2
