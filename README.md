@@ -1,10 +1,8 @@
-# Publish
-
-- update the version
-- ```./gradlew clean assembleRelease```
-- ```./gradlew artifactoryPublish```
-
 # Change log
+
+## Version 3.5.2
+
+* First version published on AWS Code artifact
 
 ## Version 3.5.1
 
@@ -13,6 +11,8 @@
 ## Version 3.5.0
 
 * Moved the source repository of moshi-jsonapi to the SeatCode artifactory to avoid problems of availability
+
+---
 
 # moshi-jsonapi
 
