@@ -4,6 +4,8 @@ ext {
     VERSION_NAME = "3.5.2"
 }
 
+def awsPassword = artifact_password_command.execute().text
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
@@ -16,7 +18,7 @@ publishing {
             url artifact_url
             credentials {
                 username artifact_user_name
-                password artifact_password_command.execute().text
+                password awsPassword
             }
         }
     }
