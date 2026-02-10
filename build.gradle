@@ -1,4 +1,3 @@
-apply plugin: "com.jfrog.artifactory"
 apply plugin: "maven-publish"
 apply plugin: 'java'
 apply plugin: 'groovy'
@@ -6,12 +5,6 @@ apply plugin: 'groovy'
 buildscript {
     repositories {
         mavenCentral()
-    }
-
-    def ARTIFACTORY_VERSION = "4.24.4"
-
-    dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:$ARTIFACTORY_VERSION"
     }
 }
 
