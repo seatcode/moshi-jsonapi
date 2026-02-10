@@ -5,13 +5,12 @@ apply plugin: 'groovy'
 
 buildscript {
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     def ARTIFACTORY_VERSION = "4.24.4"
 
     dependencies {
-        classpath 'com.novoda:bintray-release:0.3.5'
         classpath "org.jfrog.buildinfo:build-info-extractor-gradle:$ARTIFACTORY_VERSION"
     }
 }
@@ -21,12 +20,12 @@ apply from: "${rootDir}/buildsystem/artifactory.gradle"
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven {
-            url artifact_url
+            url = artifact_url
             credentials {
-                username artifact_user_name
-                password artifact_password_command.execute().text
+                username = artifact_user_name
+                password = artifact_password_command.execute().text
             }
         }
         maven {
@@ -37,7 +36,7 @@ allprojects {
 
 subprojects {
     ext.describeVersion = { ->
-        def stdout = new ByteArrayOutputStream()
+        def stdout = new java.io.ByteArrayOutputStream()
         exec {
             commandLine 'git', 'describe', '--tags'
             standardOutput = stdout
@@ -46,7 +45,7 @@ subprojects {
     }
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 }
 

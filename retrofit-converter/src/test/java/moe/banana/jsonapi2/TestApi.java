@@ -4,7 +4,6 @@ import moe.banana.jsonapi2.model.Article;
 import moe.banana.jsonapi2.model.Comment;
 import retrofit2.Call;
 import retrofit2.http.*;
-
 import java.util.List;
 
 public interface TestApi {
