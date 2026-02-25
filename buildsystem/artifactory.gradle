@@ -1,7 +1,7 @@
 ext {
     CONTEXT_URL = "https://seatcode.jfrog.io/artifactory"
     GROUP_ID = "seat.code.android"
-    VERSION_NAME = "3.5.2"
+    VERSION_NAME = "3.5.3"
 }
 
 def awsPassword = artifact_password_command.execute().text
@@ -15,10 +15,10 @@ publishing {
     }
     repositories {
         maven {
-            url artifact_url
+            url = artifact_url
             credentials {
-                username artifact_user_name
-                password awsPassword
+                username = artifact_user_name
+                password = awsPassword
             }
         }
     }
