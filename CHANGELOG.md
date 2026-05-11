@@ -1,5 +1,9 @@
 # Change log
 
+## Version 3.5.4
+
+- update retrofit version to 3.0.0
+
 ## Version 3.5.3
 
 - project maintenance moved to SeatCode, the source repository of moshi-jsonapi is without any change from version 3.5.0, but the source repository is moved to SeatCode artifactory to avoid problems of availability.

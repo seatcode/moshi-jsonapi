@@ -1,7 +1,7 @@
 ext {
     CONTEXT_URL = "https://seatcode.jfrog.io/artifactory"
     GROUP_ID = "seat.code.android"
-    VERSION_NAME = "3.5.3"
+    VERSION_NAME = "3.5.4"
 }
 
 def awsPassword = artifact_password_command.execute().text
