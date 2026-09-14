@@ -1,24 +1,20 @@
-apply plugin: "maven-publish"
-apply plugin: 'java'
-apply plugin: 'groovy'
-
 buildscript {
     repositories {
         mavenCentral()
     }
 }
 
-apply from: "${rootDir}/buildsystem/artifactory.gradle"
-
 allprojects {
     repositories {
         google()
         mavenCentral()
-        maven {
-            url = artifact_url
-            credentials {
-                username = artifact_user_name
-                password = artifact_password_command.execute().text
+        if (project.hasProperty('artifact_url')) {
+            maven {
+                url = artifact_url
+                credentials {
+                    username = project.findProperty('artifact_user_name') ?: ""
+                    password = project.hasProperty('artifact_password_command') ? artifact_password_command.execute().text.trim() : ""
+                }
             }
         }
         maven {
@@ -41,16 +37,3 @@ subprojects {
         mavenCentral()
     }
 }
-
-task deleteJar(type: Delete) {
-    delete 'libs/jars/logmanagementlib.jar'
-}
-
-task createJar(type: Copy) {
-    from('build/intermediates/bundles/release/')
-    into('libs/jars/')
-    include('classes.jar')
-    rename('classes.jar', 'logmanagementlib.jar')
-}
-
-createJar.dependsOn(deleteJar, build)
