@@ -58,7 +58,7 @@ public class HasManyTest {
 
     @Test
     public void serialization_null() throws Exception {
-        assertThat(TestUtil.moshi().adapter(HasMany.class).toJson(new HasMany<Comment>(null)),
+        assertThat(TestUtil.moshi().adapter(HasMany.class).toJson(new HasMany<Comment>((ResourceIdentifier[]) null)),
                 equalTo("{\"data\":null}"));
     }
 
