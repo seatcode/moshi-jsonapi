@@ -1,5 +1,12 @@
 # Change log
 
+## Version 3.5.5
+
+- Fix `DocumentTest.deserialize_null` by properly consuming null token with `reader.nextNull()` in `ResourceAdapterFactory`
+- Safely guard publishing credentials and repositories behind property checks so builds and tests can run without global AWS CodeArtifact configuration
+- Clean up root and subproject `build.gradle` (remove unused Groovy plugin, remove obsolete jar tasks from root, eliminate dummy root publications)
+- Resolve Java compiler deprecation and varargs warnings in tests
+
 ## Version 3.5.4
 
 - update retrofit version to 3.0.0

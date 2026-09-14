@@ -376,8 +376,8 @@ public class DocumentTest {
 
         Document document = getDocumentAdapter(null, Photo.class).fromJsonValue(photoMap);
         Photo photo = (Photo) document.asObjectDocument().get();
-        assertEquals(new Double(23.641), photo.getShutter());
-        assertEquals(new Double(39.9042), photo.getLocation().latitude);
+        assertEquals(Double.valueOf(23.641), photo.getShutter());
+        assertEquals(Double.valueOf(39.9042), photo.getLocation().latitude);
     }
 
     @Test

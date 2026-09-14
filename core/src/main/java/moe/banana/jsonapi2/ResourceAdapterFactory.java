@@ -88,7 +88,7 @@ public final class ResourceAdapterFactory implements JsonAdapter.Factory {
         @SuppressWarnings("unchecked")
         public Document fromJson(JsonReader reader) throws IOException {
             if (reader.peek() == JsonReader.Token.NULL) {
-                return null;
+                return reader.nextNull();
             }
             Document document = new ObjectDocument<DATA>();
             reader.beginObject();

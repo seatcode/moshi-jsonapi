@@ -6,7 +6,6 @@ plugins {
 }
 
 apply plugin: "maven-publish"
-apply plugin: 'groovy'
 
 sourceSets {
     test {
